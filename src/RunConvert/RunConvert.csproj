@@ -12,12 +12,12 @@
     <PackageTags>runconvert;file converter;convert;pdf;video;image;api;sdk</PackageTags>
     <PackageProjectUrl>https://www.runconvert.com/docs</PackageProjectUrl>
     <RepositoryUrl>https://github.com/runconvert/runconvert-dotnet</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageReleaseNotes>https://github.com/runconvert/runconvert-dotnet/blob/main/CHANGELOG.md</PackageReleaseNotes>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <NoWarn>$(NoWarn);CS1591</NoWarn>
-    <!-- Not packable until launch. -->
-    <IsPackable>false</IsPackable>
   </PropertyGroup>
   <ItemGroup>
     <None Include="../../README.md" Pack="true" PackagePath="/" />

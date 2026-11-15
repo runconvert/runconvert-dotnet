@@ -1,0 +1,34 @@
+# Publishes to NuGet when a version tag is pushed:
+#   1. bump <Version> in src/RunConvert/RunConvert.csproj (and Version in RunConvertClient.cs) and CHANGELOG.md
+#   2. gh release create v0.2.0 --target main   (or: git tag v0.2.0 && git push origin v0.2.0)
+#   3. approve the "release" environment in the Actions tab
+# Uses NuGet trusted publishing (OIDC): no NuGet API key is stored anywhere.
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment: release
+    permissions:
+      id-token: write
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: "8.0.x"
+      - run: dotnet test tests/RunConvert.Tests --filter "Category!=Live"
+      - name: The tag matches the project version
+        run: test "v$(sed -n 's:.*<Version>\(.*\)</Version>.*:\1:p' src/RunConvert/RunConvert.csproj)" = "$GITHUB_REF_NAME"
+      - run: dotnet pack src/RunConvert -c Release -o out -p:ContinuousIntegrationBuild=true
+      - uses: NuGet/login@v1
+        id: login
+        with:
+          user: dinushax
+      - run: dotnet nuget push out/*.nupkg --api-key "${{ steps.login.outputs.NUGET_API_KEY }}" --source https://api.nuget.org/v3/index.json
