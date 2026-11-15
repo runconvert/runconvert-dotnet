@@ -1,0 +1,8 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RunConvert", "src\RunConvert\RunConvert.csproj", "{6D7B2E4A-1C3F-4B8A-9E2D-5F1A7C3B9D01}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RunConvert.Tests", "tests\RunConvert.Tests\RunConvert.Tests.csproj", "{8E2C4F6B-3D5A-4C9B-AF1E-6B2C8D4E0F12}"
+EndProject
+Global
+EndGlobal

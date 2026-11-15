@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>net8.0</TargetFrameworks>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+    <RootNamespace>RunConvert</RootNamespace>
+    <PackageId>RunConvert</PackageId>
+    <Version>0.1.0</Version>
+    <Authors>RunConvert</Authors>
+    <Description>Official RunConvert SDK for .NET: convert files between 240+ formats.</Description>
+    <PackageTags>runconvert;file converter;convert;pdf;video;image;api;sdk</PackageTags>
+    <PackageProjectUrl>https://www.runconvert.com/docs</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/runconvert/runconvert-dotnet</RepositoryUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+    <!-- Not packable until launch. -->
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="../../README.md" Pack="true" PackagePath="/" />
+    <InternalsVisibleTo Include="RunConvert.Tests" />
+  </ItemGroup>
+</Project>
