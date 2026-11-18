@@ -16,7 +16,7 @@ namespace RunConvert;
 /// </summary>
 public sealed class RunConvertClient : IDisposable
 {
-    public const string Version = "0.1.0";
+    public const string Version = "0.1.0"; // x-release-please-version
     public const string DefaultBaseUrl = "https://api.runconvert.com/v3";
     private static readonly HashSet<int> RetryStatus = new() { 408, 425, 429, 500, 502, 503, 504 };
     internal static readonly JsonSerializerOptions Json = new(JsonSerializerDefaults.Web);
