@@ -6,7 +6,7 @@
     <LangVersion>latest</LangVersion>
     <RootNamespace>RunConvert</RootNamespace>
     <PackageId>RunConvert</PackageId>
-    <Version>0.1.0</Version>
+    <Version>0.1.0</Version><!-- x-release-please-version -->
     <Authors>RunConvert</Authors>
     <Description>Official RunConvert SDK for .NET: convert files between 240+ formats.</Description>
     <PackageTags>runconvert;file converter;convert;pdf;video;image;api;sdk</PackageTags>
